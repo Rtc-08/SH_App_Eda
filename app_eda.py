@@ -212,16 +212,15 @@ class EDA:
             tabs = st.tabs(["Basic Stats", "Trend by Year", "Region Analysis", "Change Analysis", "Visualization"])
             # 각 탭에서 df를 활용한 분석 코드 작성 가능
         tabs = st.tabs([
-            "1. 목적 & 절차",
-            "2. 데이터셋 설명",
-            "3. 데이터 로드 & 품질 체크",
-            "4. Datetime 특성 추출",
-            "5. 시각화",
-            "6. 상관관계 분석",
-            "7. 이상치 제거",
-            "8. 로그 변환",
-            "지역별 인구 분석"
-        ])
+            "🔭 목적 & 분석 절차",
+            "🔍 데이터셋 설명",
+            "📥 데이터 로드 & 품질 체크",
+            "📈 지역별 인구 분석",
+            "📊 National Population Forecast",
+            "📉 Regional Population Change (Last 5 Years)",
+            "📊 Top 100 Population Changes by Region-Year",
+            "📊 Cumulative Area Chart by Region"
+                    ])
 
         # 1. 목적 & 분석 절차
         with tabs[0]:
@@ -231,13 +230,14 @@ class EDA:
             다양한 특성이 대여량(count)에 미치는 영향을 파악합니다.
 
             **절차**:
-            1. 데이터 구조 및 기초 통계 확인  
-            2. 결측치/중복치 등 품질 체크  
-            3. datetime 특성(연도, 월, 일, 시, 요일) 추출  
-            4. 주요 변수 시각화  
-            5. 변수 간 상관관계 분석  
-            6. 이상치 탐지 및 제거  
-            7. 로그 변환을 통한 분포 안정화
+            1. 목적 & 분석 절차
+            2.데이터셋 설명
+            3. 데이터 로드 & 품질 체크
+            3. 지역별 인구 분석
+            4. National Population Forecast
+            5. Regional Population Change (Last 5 Years)
+            6. Top 100 Population Changes by Region-Year
+            7. Cumulative Area Chart by Region"
             """)
 
         # 2. 데이터셋 설명
