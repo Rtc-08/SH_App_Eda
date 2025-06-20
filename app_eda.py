@@ -450,7 +450,7 @@ class EDA:
         #         > - 오른쪽: 로그 변환 후 분포는 훨씬 균형잡힌 형태로, 중앙값 부근에 데이터가 집중됩니다.  
         #         > - 극단치의 영향이 완화되어 이후 분석·모델링 안정성이 높아집니다.
         #         """)
-        with tabs[8]:
+        with tabs[3]:
             st.header("📈 지역별 인구 분석")
             pop_file = st.file_uploader("population_trends.csv 파일 업로드", type=["csv"], key="pop")
 
@@ -477,7 +477,7 @@ class EDA:
                 df.info(buf=buffer)
                 s = buffer.getvalue()
                 st.text(s)
-        with tabs[9]:
+        with tabs[4]:
             st.header("📊 National Population Forecast")
             pop_file = st.file_uploader("Upload population_trends.csv", type=["csv"], key="forecast")
 
@@ -515,7 +515,7 @@ class EDA:
                 ax.grid(True)
 
                 st.pyplot(fig)
-        with tabs[10]:
+        with tabs[5]:
             st.header("📉 Regional Population Change (Last 5 Years)")
             pop_file = st.file_uploader("Upload population_trends.csv", type=["csv"], key="region_change")
 
@@ -570,7 +570,7 @@ class EDA:
                 - The second chart reflects proportional change relative to original population size.  
                 - Metropolitan areas often have higher absolute growth, while smaller regions may show higher rate-based growth.
                 """)
-        with tabs[11]:
+        with tabs[6]:
             st.header("📊 Top 100 Population Changes by Region-Year")
             pop_file = st.file_uploader("Upload population_trends.csv", type=["csv"], key="top_diff")
 
@@ -602,7 +602,7 @@ class EDA:
                     styled.style.applymap(highlight_change, subset=['증감'])
                     .format({'인구': '{}', '증감': '{}'})
                 )
-        with tabs[12]:
+        with tabs[7]:
             st.header("📊 Cumulative Area Chart by Region")
             pop_file = st.file_uploader("Upload population_trends.csv", type=["csv"], key="stacked_area")
 
