@@ -326,8 +326,8 @@ class EDA:
                 population = df_national['인구'].astype(int)
 
                 recent = df_national.tail(3)
-                birth_avg = recent['출생아수(명)'].astype(int).mean()
-                death_avg = recent['사망자수(명)'].astype(int).mean()
+                birth_avg = pd.to_numeric(recent['출생아수(명)'], errors='coerce').fillna(0).astype(int).mean()
+                death_avg = pd.to_numeric(recent['사망자수(명)'], errors='coerce').fillna(0).astype(int).mean()
                 net_change = birth_avg - death_avg
 
                 last_year = years.iloc[-1]
