@@ -193,7 +193,24 @@ class Logout:
 class EDA:
      def __init__(self):
         st.title("📊 EDA 페이지")
+        import os
+        uploaded = st.file_uploader("Upload population_trends.csv", type=["csv"])
+        DEFAULT_PATH = "population_trends.csv"
 
+        if uploaded is not None:
+            df = pd.read_csv(uploaded)
+            st.success("✅ CSV loaded from user upload.")
+        elif os.path.exists(DEFAULT_PATH):
+            df = pd.read_csv(DEFAULT_PATH)
+            st.success("✅ CSV loaded from repository.")
+        else:
+            df = None
+            st.warning("⚠️ CSV file not found. Please upload it.")
+
+        # 이후 탭에서 df가 있을 경우에만 분석 실행
+        if df is not None:
+            tabs = st.tabs(["Basic Stats", "Trend by Year", "Region Analysis", "Change Analysis", "Visualization"])
+            # 각 탭에서 df를 활용한 분석 코드 작성 가능
         tabs = st.tabs([
             "1. 목적 & 절차",
             "2. 데이터셋 설명",
